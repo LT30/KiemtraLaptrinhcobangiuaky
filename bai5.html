@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Ý 1 câu 5
+        function C1(a,b,c){
+            let S = 0;
+            let p = 0;
+            p = (a+b+c)/2;
+            if (p-a>0 && p-b>0 && p-c > 0){
+                S = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            }
+            if (S == 0){
+                return  'Đây không phải là hình tam giác';
+            }
+            else{
+                return 'diện tich hình tam giác là : ' + S;
+            }
+        }
+        let a =+prompt('Nhập cạnh a: ')
+        let b =+prompt('Nhập cạnh b: ')
+        let c =+prompt('Nhập cạnh c: ')
+        document.write(C1(a,b,c))
+
+        // ý 2 câu 5
+        let Arr = [1,2,3,4,5,6,7,8,9,3,5,5];
+        let x = +prompt ('Nhập x')
+        function C2(arr, x){
+            let Count = 0
+            for (let i = 0; i< arr.length; i++){
+                
+                if (x == arr[i]){
+                    Count++
+                }
+            }
+            return Count;
+        }
+        document.write('<br> Số lần xuất hiện của ' + x + ' là ' + C2(Arr,x) + ' lần')
+
+        // Ý 3 cấu 5
+        function C3(arr){
+            let Max = arr[0]
+            let Solon2 = 0
+            for (let i = 0; i< arr.length; i++){
+                if(arr[i] > Max){
+                    Solon2 = Max
+                    Max = arr[i]
+                }
+            }
+            return Solon2;
+        }
+        document.write('<br> Số lớn thứ 2 của chuỗi là ' + C3(Arr))
+    </script>
+</body>
+</html>
